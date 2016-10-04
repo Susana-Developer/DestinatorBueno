@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Destinator')
-.constant("baseURL", "http://localhost:3033/")
+.constant("baseURL", "https://protected-retreat-21113.herokuapp.com/")
 .factory('destinosFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
         return $resource(baseURL + "destinos", null, {
