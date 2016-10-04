@@ -16,7 +16,9 @@ var gulp = require('gulp'),
     ngannotate = require('gulp-ng-annotate'),
     del = require('del');
 
-   
+  
+process.env.DISABLE_NOTIFIER = true;
+
 gulp.task('jshint', function() {
   return gulp.src('app/scripts/**/*.js')
   .pipe(jshint())
