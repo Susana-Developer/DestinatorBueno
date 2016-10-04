@@ -23,23 +23,23 @@ gulp.task('jshint', function() {
   .pipe(jshint.reporter(stylish));
 });
 
-gulp.task('usemin',['jshint'], function () {
-  return gulp.src('./app/**/*.html')
-      .pipe(usemin({
-        css:[minifycss(),rev()],
-        js: [ngannotate(),uglify(),rev()]
-      }))
-      .pipe(gulp.dest('dist/'));
-});
+//gulp.task('usemin',['jshint'], function () {
+//  return gulp.src('./app/**/*.html')
+//      .pipe(usemin({
+//        css:[minifycss(),rev()],
+//        js: [ngannotate(),uglify(),rev()]
+//      }))
+//      .pipe(gulp.dest('dist/'));
+//});
 
 
 // Images
-gulp.task('imagemin', function() {
-  return del(['dist/images']), gulp.src('app/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/images'))
-    .pipe(notify({ message: 'Images task complete' }));
-});
+//gulp.task('imagemin', function() {
+//  return del(['dist/images']), gulp.src('app/images/**/*')
+//    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+//    .pipe(gulp.dest('dist/images'))
+//    .pipe(notify({ message: 'Images task complete' }));
+//});
 
 // Clean
 gulp.task('clean', function() {
@@ -90,5 +90,6 @@ gulp.task('browser-sync', ['default'], function () {
 
 // Default task
 gulp.task('default', ['clean'], function() {
-    gulp.start('usemin', 'imagemin','copyfonts');
+    //gulp.start('usemin', 'imagemin','copyfonts');
+    gulp.start('copyfonts');
 });
