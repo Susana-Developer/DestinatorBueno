@@ -1,3 +1,4 @@
+process.env.DISABLE_NOTIFIER = true;
 
 var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
@@ -17,7 +18,7 @@ var gulp = require('gulp'),
     del = require('del');
 
   
-process.env.DISABLE_NOTIFIER = true;
+
 
 gulp.task('jshint', function() {
   return gulp.src('app/scripts/**/*.js')
