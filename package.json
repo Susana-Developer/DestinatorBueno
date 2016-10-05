@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "gulp watch",
-  "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "postinstall": "gulp watch"
+  
     
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
     "phantomjs": "^1.9.19"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "4.5.0"
   },
   "dependencies": {
     "assert": "^1.4.1",
