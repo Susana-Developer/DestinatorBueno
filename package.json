@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrent \"node ./bin/www\" \"gulp watch\" "
+    "postinstall": "gulp watch",
+  "start": "node ./bin/www"
+    
   },
   "devDependencies": {
     "browser-sync": "^2.10.0",
