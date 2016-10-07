@@ -26,11 +26,10 @@ db.once('open', function () {
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -51,6 +50,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/destinos', destinationRouter);
+
+//app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
