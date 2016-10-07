@@ -55,7 +55,7 @@ app.use('/destinos', destinationRouter);
 
 app.use(express.static(__dirname + '/app'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
-app.use("/stylesheets", express.static(__dirname + '/styles'));
+app.use("/styles", express.static(__dirname + '/stylesheets'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
