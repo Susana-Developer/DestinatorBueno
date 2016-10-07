@@ -16,6 +16,8 @@ var mongoose = require('mongoose');
 
 var config = require('./config');
 
+
+
 mongoose.connect(config.mongoUrl);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -25,6 +27,11 @@ db.once('open', function () {
 });
 
 var app = express();
+
+//app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/dist'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+//app.use("/styles", express.static(__dirname + '/stylesheets'));
 
 
 // view engine setup
@@ -53,9 +60,7 @@ app.use('/destinos', destinationRouter);
 
 //app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(__dirname + '/app'));
-app.use('/bower_components', express.static(__dirname + '/bower_components'));
-app.use("/styles", express.static(__dirname + '/stylesheets'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
