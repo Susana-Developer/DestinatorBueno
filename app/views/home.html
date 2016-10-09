@@ -10,7 +10,7 @@
                         <th>MINISTERIO</th>
                         <th>CENTRO DIRECTIVO / OO.AA.</th>
                         <th>CENTRO DE DESTINO</th>
-                        <th>PROVINCIA</th>
+                        <th><a href="#" ng-click="sortType = 'provincia'">PROVINCIA<span ng-show="sortType == 'provincia'" class="fa fa-caret-down"></span></th>
                         <th>LOCALIDAD</th>
                         <th>PUESTO DE TRABAJO</th>
                         <th>NIVEL C.D</th>
@@ -30,7 +30,7 @@
                         <th>DUCHA</th>
                         <th>PERSPECTIVAS DE PROMOCIÓN, FRECUENCIA CONCURSOS, POSIBILIDADES DE MOVILIDAD GEOGRÁFICA</th>
                         <th>PRESENCIA EXTERNOS</th>
-                        <!--<th>COMENTARIOS</th>-->
+                        <th>COMENTARIOS</th>
                       </tr>
                     </thead>
                      <tbody>
@@ -59,7 +59,7 @@
                         <td>{{x.ducha}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ducha" ng-click="openDialogDucha(x.ducha, x._id, x.puesto_numero)">Editar</button></td>
                         <td>{{x.promocion}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="promocion" ng-click="openDialogPromocion(x.promocion, x._id, x.puesto_numero)">Editar</button></td>
                         <td>{{x.externos}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="externos" ng-click="openDialogExternos(x.externos, x._id, x.puesto_numero)">Editar</button></td>
-                        <!--<td>{{x.comments}}</td>-->
+                        <td>{{x.comments}}</td>
                       </tr>
                       </tbody>
                 </table>
