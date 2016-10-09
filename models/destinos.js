@@ -21,6 +21,10 @@ var destSchema = new Schema({
         required: true,
         unique: true
     },
+    ministerio: {
+        type: String,
+        required: true
+    },
     centro_directivo: {
         type: String,
         required: true
