@@ -153,7 +153,8 @@ angular.module('Destinator')
             }
         );*/
         $scope.sortType     = 'puesto_numero'; // set the default sort type
-        $scope.sortReverse  = true;  // set the default sort order
+        $scope.sortReverseInit  = false; 
+        $scope.sortReverse  =  true;  // set the default sort order
 
         $scope.openDialog = function (productivity, id, puesto_num) {
             //var newScope = $scope.$new();
