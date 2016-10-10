@@ -152,7 +152,7 @@ angular.module('Destinator')
                 $scope.message = "Error: " + response.status + " " + response.statusText;
             }
         );*/
-        $scope.sortType     = 'provincia'; // set the default sort type
+        $scope.sortType     = 'puesto_numero'; // set the default sort type
         $scope.sortReverse  = false;  // set the default sort order
 
         $scope.openDialog = function (productivity, id, puesto_num) {
