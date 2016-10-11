@@ -157,7 +157,7 @@ angular.module('Destinator')
         $scope.sortReverse  =  false;  // set the default sort order
 
         $scope.viewby = 10;
-        $scope.totalItems = $scope.destino.length;
+        $scope.totalItems = 28;
         $scope.currentPage = 1;
         $scope.itemsPerPage = $scope.viewby;
         $scope.maxSize = 5; //Number of pager buttons to show
