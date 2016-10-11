@@ -105,5 +105,9 @@ angular.module('Destinator', ['ui.router','ngResource','ngDialog'])
         $urlRouterProvider.otherwise('/');
 
 })
-.filter('startFrom',function(){});
+.filter('startFrom',function(){
+    return function(data, start){
+        data.slice(start);
+    }
+});
 
