@@ -24,8 +24,37 @@
         "externos": "Sí",
 		"comments": [
             {
-                "comment": 'This is insane',
-                "author": 'Matt Daemon'
+                "comment": "This is insane",
+                "author": "Matt Daemon"
             }
         ]
+    }
+
+
+{
+        "puesto_numero": 2,
+	   "ministerio": "Ministerio de Cultura"
+        "centro_directivo": "DELEGACION DEL GOBIERNO EN CATALUÑA",
+        "centro_destino": "DELEGACION DEL GOBIERNO EN CATALUÑA - SECRETARIA GENERAL",
+        "provincia": "MADRID",
+        "localidad": "MADRID",
+        "puesto_trabajo": "PROGRAMADOR DE SEGUNDA",
+        "nivel": 15,
+        "comp_especifico": "3.476,68",
+        "comp_productividad": "",
+        "direccion": "",
+        "telefono": "",
+        "horario_flexibilidad": "",
+        "descripcion": "",
+        "transporte_publico": "",
+        "aparcamiento": "",
+        "ayudas_estudios": "",
+        "ayudas_cuerpos_superiores": "",
+        "concilacion": "",
+        "accion_social": "",
+        "comedor": "",
+        "ducha": "",
+        "promocion": "",
+        "externos": "",
+		"comments": []
     }
