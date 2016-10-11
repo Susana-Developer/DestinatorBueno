@@ -34,7 +34,7 @@
                       </tr>
                     </thead>
                      <tbody>
-                      <tr ng-repeat="x in destino|startFrom: 2">
+                      <tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
                         <td>{{x.puesto_numero}}</td>
                         <td>{{x.ministerio}}</td>
                         <td>{{x.centro_directivo}}</td>
