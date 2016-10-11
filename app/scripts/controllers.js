@@ -163,7 +163,7 @@ angular.module('Destinator')
             var begin = (($scope.currentPage - 1) * $scope.numPerPage)
             , end = begin + $scope.numPerPage;
             
-            $scope.filtereddestino = $scope.todos.slice(begin, end);
+            $scope.filtereddestino = $scope.destino.slice(begin, end);
           });
 
         $scope.openDialog = function (productivity, id, puesto_num) {
