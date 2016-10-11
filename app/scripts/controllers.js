@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Destinator')
+angular.module('Destinator', ['angularUtils.directives.dirPagination'])
 
 .controller('MenuController', ['$scope', 'menuFactory', 'favoriteFactory', function ($scope, menuFactory, favoriteFactory) {
 
@@ -137,7 +137,7 @@ angular.module('Destinator')
 
 // implement the IndexController and About Controller here
 
-.controller('HomeController', ['$scope', '$state', 'angularUtils.directives.dirPagination', 'ngDialog', 'destinosFactory', function ($scope, $state, ngDialog, destinosFactory) {
+.controller('HomeController', ['$scope', '$state', 'ngDialog', 'destinosFactory', function ($scope, $state, ngDialog, destinosFactory) {
    /* destinosFactory.query({})
         .$promise.then(
             function (response) {
