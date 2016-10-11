@@ -34,7 +34,7 @@
                       </tr>
                     </thead>
                      <tbody>
-                      <tr ng-repeat="x in destino">
+                      <tr dir-paginate="x in destino|itemsPerPage:5">
                         <td>{{x.puesto_numero}}</td>
                         <td>{{x.ministerio}}</td>
                         <td>{{x.centro_directivo}}</td>
@@ -63,6 +63,8 @@
                       </tr>
                       </tbody>
                 </table>
+
+                <dir-pagination-controls></dir-pagination-controls>
 
             </div>
 
