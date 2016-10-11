@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Destinator', ['angularUtils.directives.dirPagination'])
+angular.module('Destinator')
 
 .controller('MenuController', ['$scope', 'menuFactory', 'favoriteFactory', function ($scope, menuFactory, favoriteFactory) {
 
@@ -155,6 +155,26 @@ angular.module('Destinator', ['angularUtils.directives.dirPagination'])
         $scope.sortType     = 'puesto_numero'; // set the default sort type
         //$scope.sortReverseInit  = false; 
         $scope.sortReverse  =  false;  // set the default sort order
+
+        $scope.viewby = 10;
+        $scope.totalItems = $scope.destino.length;
+        $scope.currentPage = 1;
+        $scope.itemsPerPage = $scope.viewby;
+        $scope.maxSize = 5; //Number of pager buttons to show
+
+          $scope.setPage = function (pageNo) {
+            $scope.currentPage = pageNo;
+          };
+
+          //$scope.pageChanged = function() {
+            //console.log('Page changed to: ' + $scope.currentPage);
+          //};
+
+            $scope.setItemsPerPage = function(num) {
+              $scope.itemsPerPage = num;
+              $scope.currentPage = 1; //reset to first paghe
+            }
+
 
         $scope.openDialog = function (productivity, id, puesto_num) {
             //var newScope = $scope.$new();
