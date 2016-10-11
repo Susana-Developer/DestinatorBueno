@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Destinator', ['angularUtils.directives.dirPagination'])
+angular.module('Destinator')
 
 .controller('MenuController', ['$scope', 'menuFactory', 'favoriteFactory', function ($scope, menuFactory, favoriteFactory) {
 
