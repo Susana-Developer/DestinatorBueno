@@ -1,7 +1,7 @@
 'use strict';
 
 //angular.module('confusionApp', ['ui.router','ngResource','ngDialog'])
-angular.module('Destinator', ['ui.router','ngResource','ngDialog'])
+angular.module('Destinator', ['ui.router','ngResource','ngDialog', 'ui.bootstrap'])
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
