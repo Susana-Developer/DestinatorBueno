@@ -137,7 +137,7 @@ angular.module('Destinator')
 
 // implement the IndexController and About Controller here
 
-.controller('HomeController', ['$scope', '$state', 'ui.bootstrap', 'ngDialog', 'destinosFactory', function ($scope, $state, ngDialog, destinosFactory) {
+.controller('HomeController', ['$scope', '$state', 'ngDialog', 'destinosFactory', function ($scope, $state, ngDialog, destinosFactory) {
    /* destinosFactory.query({})
         .$promise.then(
             function (response) {
@@ -155,17 +155,6 @@ angular.module('Destinator')
         $scope.sortType     = 'puesto_numero'; // set the default sort type
         //$scope.sortReverseInit  = false; 
         $scope.sortReverse  =  false;  // set the default sort order
-        /*$scope.currentPage = 1;
-        $scope.maxSize = 5;
-        $scope.numPerPage = 10;
-        $scope.filtereddestino = [];
-
-        $scope.$watch('currentPage + numPerPage', function() {
-            var begin = (($scope.currentPage - 1) * $scope.numPerPage)
-            , end = begin + $scope.numPerPage;
-            
-            $scope.filtereddestino = $scope.destino.slice(begin, end);
-          });*/
 
         $scope.openDialog = function (productivity, id, puesto_num) {
             //var newScope = $scope.$new();
