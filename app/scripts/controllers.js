@@ -152,7 +152,7 @@ angular.module('Destinator')
                 $scope.message = "Error: " + response.status + " " + response.statusText;
             }
         );*/
-        $scope.sortType     = '-puesto_numero'; // set the default sort type
+        $scope.sortType     = 'puesto_numero'; // set the default sort type
         //$scope.sortReverseInit  = false; 
         //$scope.sortReverse  =  false;  // set the default sort order
         $scope.filterTable = '';
@@ -435,7 +435,7 @@ angular.module('Destinator')
         };
 
         $scope.$on('login:Successful', function () {
-            $scope.destino = destinosFactory.query({})
+            /*$scope.destino = */destinosFactory.query({})
             .$promise.then(
                 function (response) {
 
@@ -449,7 +449,7 @@ angular.module('Destinator')
         });
 
         $scope.$on('logout', function () {
-            $scope.destino = destinosFactory.query({})
+            /*$scope.destino = */destinosFactory.query({})
             .$promise.then(
                 function (response) {
 
@@ -462,7 +462,7 @@ angular.module('Destinator')
             );
         });
 
-        $scope.destino = destinosFactory.query({})
+        /*$scope.destino = */destinosFactory.query({})
         .$promise.then(
             function (response) {
 
