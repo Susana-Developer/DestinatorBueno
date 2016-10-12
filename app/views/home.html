@@ -37,7 +37,7 @@
                     </thead>
                      <tbody>
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
-                      <tr ng-repeat="x in destino|orderBy:[sortType]">
+                      <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)">
                         <td>{{x.puesto_numero}}</td>
                         <td>{{x.ministerio}}</td>
                         <td>{{x.centro_directivo}}</td>
