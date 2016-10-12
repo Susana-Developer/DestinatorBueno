@@ -163,6 +163,7 @@ angular.module('Destinator')
         $scope.currentPage = 1;
         $scope.itemsPerPage = $scope.viewby;
         $scope.maxSize = 5; //Number of pager buttons to show
+        $scope.destino = [];
 
         // update the beginning and end points for shown people
         // this will be called when the user changes page in the pagination bar
@@ -440,7 +441,6 @@ angular.module('Destinator')
 
                     $scope.destino = response;
                     //$scope.showDish = true;
-                    console.log($scope);
                 },
                 function (response) {
                     $scope.message = "Error: " + response.status + " " + response.statusText;
