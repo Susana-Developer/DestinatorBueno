@@ -152,9 +152,11 @@ angular.module('Destinator')
                 $scope.message = "Error: " + response.status + " " + response.statusText;
             }
         );*/
-        $scope.sortType     = 'puesto_numero'; // set the default sort type
+        $scope.sortType     = '-puesto_numero'; // set the default sort type
         //$scope.sortReverseInit  = false; 
-        $scope.sortReverse  =  false;  // set the default sort order
+        //$scope.sortReverse  =  false;  // set the default sort order
+        $Scope.filterTable = '';
+        
 
         $scope.viewby = 10;
         $scope.totalItems = 28;
@@ -162,18 +164,78 @@ angular.module('Destinator')
         $scope.itemsPerPage = $scope.viewby;
         $scope.maxSize = 5; //Number of pager buttons to show
 
-          $scope.setPage = function (pageNo) {
+        // update the beginning and end points for shown people
+        // this will be called when the user changes page in the pagination bar
+        $scope.updatePageIndexes = function () {
+            $scope.firstIndex = ($scope.currentPage - 1) * $scope.itemsPerPage;
+            $scope.lastIndex = $scope.currentPage * $scope.itemsPerPage;
+        };
+        $scope.updatePageIndexes();
+
+        // sort a column with a single data attribute
+        $scope.singleSort = function(label) {
+            if ($scope.sortType == label) {
+                $scope.sortReverse();
+            } else {
+                $scope.sortType = label;
+            }
+        };
+
+        // sort functions
+        // add or remove '-' to sort up or down
+        $scope.sortReverse = function(set) {
+            set = set || false;
+            if (set || !matchFirstChar('-', $scope.sortType)) {
+                $scope.sortType = addDash($scope.sortType);
+            } else {
+                $scope.sortType = removeDash($scope.sortType);
+            }
+        };
+
+        // string manipulation functions
+        // primarily used for sorting the table
+        function matchFirstChar(c, string) {
+            return (string.charAt(0) == c);
+        }
+
+        function removeDash(label) {
+            if (matchFirstChar('-', label)) {
+                return removeFirstChar(label);
+            }
+            return label;
+        }
+        function addDash(label) {
+            if (!matchFirstChar('-', label)) {
+                return '-' + label;
+            }
+            return label;
+        }
+
+        // boolean functions for detecting how a column is sorted
+        // used for the up and down carets next to each column header
+        $scope.sortDescend = function(label1, label2) {
+            label2 = label2 || '';
+            return ($scope.sortType == label1 || $scope.sortType == label2);
+        };
+
+        $scope.sortAscend = function(label1, label2) {
+            label2 = label2 || '';
+            return ($scope.sortType == ('-' + label1) || $scope.sortType == ('-' + label2));
+        };
+    
+
+          /*$scope.setPage = function (pageNo) {
             $scope.currentPage = pageNo;
-          };
+          };*/
 
           //$scope.pageChanged = function() {
             //console.log('Page changed to: ' + $scope.currentPage);
           //};
 
-            $scope.setItemsPerPage = function(num) {
+            /*$scope.setItemsPerPage = function(num) {
               $scope.itemsPerPage = num;
               $scope.currentPage = 1; //reset to first paghe
-            }
+            }*/
 
 
         $scope.openDialog = function (productivity, id, puesto_num) {
