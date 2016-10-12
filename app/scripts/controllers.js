@@ -155,8 +155,8 @@ angular.module('Destinator')
         $scope.sortType     = '-puesto_numero'; // set the default sort type
         //$scope.sortReverseInit  = false; 
         //$scope.sortReverse  =  false;  // set the default sort order
-        $Scope.filterTable = '';
-        
+        $scope.filterTable = '';
+
 
         $scope.viewby = 10;
         $scope.totalItems = 28;
