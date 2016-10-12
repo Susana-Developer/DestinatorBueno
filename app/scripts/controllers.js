@@ -440,6 +440,7 @@ angular.module('Destinator')
 
                     $scope.destino = response;
                     //$scope.showDish = true;
+                    console.log($scope);
                 },
                 function (response) {
                     $scope.message = "Error: " + response.status + " " + response.statusText;
