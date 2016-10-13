@@ -7,7 +7,8 @@
                   <option value="20">20</option>
                   <option value="30">Todos</option>
                 </select>
-                <select ng-model="myOption">
+                <br>
+                Columnas a mostrar: <select ng-model="myOption" multiple="multiple">
                     <option value="ministerio">ministerio</option>
                     <option value="nivel">nivel</option>
                     <option value="comp_especifico">comp_especifico</option>
@@ -19,7 +20,7 @@
                     <thead>
                       <tr>
                         <th id="puesto_numero" class="sortable" ng-click="singleSort('puesto_numero')">PUESTO NÚMERO<span class="caret-blank" ng-class="{'caret-down': sortDescend('puesto_numero'), 'caret-up': sortAscend('puesto_numero')}"></span><!--<a href="#puesto_numero" ng-click="sortType = 'puesto_numero'; sortReverse = !sortReverse">PUESTO NÚMERO<span ng-show="sortType == 'puesto_numero' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'puesto_numero' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
-                        <th>MINISTERIO</th>
+                        <th ng-hide="myOption=='ministerio'">MINISTERIO</th>
                         <th>CENTRO DIRECTIVO / OO.AA.</th>
                         <th>CENTRO DE DESTINO</th>
                         <th id="provincia" class="sortable" ng-click="singleSort('provincia')">PROVINCIA<span class="caret-blank" ng-class="{'caret-down': sortDescend('provincia'), 'caret-up': sortAscend('provincia')}"></span><!--<a href="#provincia" ng-click="sortType = 'provincia'; sortReverse = !sortReverse">PROVINCIA<span ng-show="sortType == 'provincia' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'provincia' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
@@ -49,7 +50,7 @@
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
                       <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)">
                         <td>{{x.puesto_numero}}</td>
-                        <td>{{x.ministerio}}</td>
+                        <td ng-hide="myOption=='ministerio'">{{x.ministerio}}</td>
                         <td>{{x.centro_directivo}}</td>
                         <td>{{x.centro_destino}}</td>
                         <td>{{x.provincia}}</td>
