@@ -7,6 +7,11 @@
                   <option value="20">20</option>
                   <option value="30">Todos</option>
                 </select>
+                <select ng-model="myOption">
+                    <option value="ministerio">ministerio</option>
+                    <option value="nivel">nivel</option>
+                    <option value="comp_especifico">comp_especifico</option>
+                </select>
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
                  data-ng-model="filterTable">-->
@@ -20,7 +25,7 @@
                         <th id="provincia" class="sortable" ng-click="singleSort('provincia')">PROVINCIA<span class="caret-blank" ng-class="{'caret-down': sortDescend('provincia'), 'caret-up': sortAscend('provincia')}"></span><!--<a href="#provincia" ng-click="sortType = 'provincia'; sortReverse = !sortReverse">PROVINCIA<span ng-show="sortType == 'provincia' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'provincia' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th>LOCALIDAD</th>
                         <th>PUESTO DE TRABAJO</th>
-                        <th id="nivel" class="sortable" ng-click="singleSort('nivel')">NIVEL C.D<span class="caret-blank" ng-class="{'caret-down': sortDescend('nivel'), 'caret-up': sortAscend('nivel')}"></span><!--<a href="#nivel" ng-click="sortType = 'nivel'; sortReverse = !sortReverse">NIVEL C.D<span ng-show="sortType == 'nivel' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'nivel' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
+                        <th id="nivel" class="sortable" ng-click="singleSort('nivel')" ng-hide="myOption=='nivel'">NIVEL C.D<span class="caret-blank" ng-class="{'caret-down': sortDescend('nivel'), 'caret-up': sortAscend('nivel')}"></span><!--<a href="#nivel" ng-click="sortType = 'nivel'; sortReverse = !sortReverse">NIVEL C.D<span ng-show="sortType == 'nivel' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'nivel' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th id="comp_especifico" class="sortable" ng-click="singleSort('comp_especifico')">COMP.ESPECÍFICO<span class="caret-blank" ng-class="{'caret-down': sortDescend('comp_especifico'), 'caret-up': sortAscend('comp_especifico')}"></span><!--<a href="#comp_especifico" ng-click="sortType = 'comp_especifico'; sortReverse = !sortReverse">COMP.ESPECÍFICO<span ng-show="sortType == 'comp_especifico' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'comp_especifico' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th>COMP. PRODUCTIVIDAD</th>
                         <th>DIRECCIÓN</th>
@@ -50,7 +55,7 @@
                         <td>{{x.provincia}}</td>
                         <td>{{x.localidad}}</td>
                         <td>{{x.puesto_trabajo}}</td>
-                        <td>{{x.nivel}}</td>
+                        <td ng-hide="myOption=='nivel'">{{x.nivel}}</td>
                         <td>{{x.comp_especifico}}</td>
                         <td>{{x.comp_productividad}}<br><button class="btn btn-xs btn-info" style="float: bottom;" type="button" cache-view="false" ng-model="productividad" ng-click="openDialog(x.comp_productividad, x._id, x.puesto_numero)">Editar</button></td>
                         <td>{{x.direccion}}<br><button class="btn btn-xs btn-info vertical-bottom" type="button" cache-view="false" ng-model="direccion" ng-click="openDialogDir(x.direccion, x._id, x.puesto_numero)">Editar</button></td>
