@@ -69,10 +69,11 @@
 
 
                 <ul uib-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm" items-per-page="itemsPerPage" ng-change="updatePageIndexes()" max-size="maxSize" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
-                <select ng-model="itemsPerPage" ng-change="updatePageIndexes()">
+                <br>
+                Número de destinos por página: <select ng-model="itemsPerPage" ng-change="updatePageIndexes()">
                   <option value="10">10</option>
                   <option value="20">20</option>
-                  <option value="30">30</option>
+                  <option value="30">Todos</option>
                 </select>
             </div>
 
