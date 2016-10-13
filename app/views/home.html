@@ -8,7 +8,7 @@
                   <option value="30">Todos</option>
                 </select>
                 <br>
-                Columnas a mostrar: <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número <input type="checkbox" ng-model="hideMinisterio"/> Ministerio <input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.
+                Columnas a mostrar: <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número <input type="checkbox" ng-model="hideMinisterio"/> Ministerio <input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA. <input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino
                
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
@@ -19,7 +19,7 @@
                         <th id="puesto_numero" class="sortable" ng-click="singleSort('puesto_numero')" ng-hide="hidePuestoNumero">PUESTO NÚMERO<span class="caret-blank" ng-class="{'caret-down': sortDescend('puesto_numero'), 'caret-up': sortAscend('puesto_numero')}"></span><!--<a href="#puesto_numero" ng-click="sortType = 'puesto_numero'; sortReverse = !sortReverse">PUESTO NÚMERO<span ng-show="sortType == 'puesto_numero' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'puesto_numero' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th ng-hide="hideMinisterio">MINISTERIO</th>
                         <th ng-hide="hideCentroDirectivo">CENTRO DIRECTIVO / OO.AA.</th>
-                        <th>CENTRO DE DESTINO</th>
+                        <th ng-hide="hideCentroDestino">CENTRO DE DESTINO</th>
                         <th id="provincia" class="sortable" ng-click="singleSort('provincia')">PROVINCIA<span class="caret-blank" ng-class="{'caret-down': sortDescend('provincia'), 'caret-up': sortAscend('provincia')}"></span><!--<a href="#provincia" ng-click="sortType = 'provincia'; sortReverse = !sortReverse">PROVINCIA<span ng-show="sortType == 'provincia' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'provincia' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th>LOCALIDAD</th>
                         <th>PUESTO DE TRABAJO</th>
@@ -47,9 +47,9 @@
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
                       <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)">
                         <td ng-hide="hidePuestoNumero">{{x.puesto_numero}}</td>
-                        <td ng-hide="myOption=='ministerio'">{{x.ministerio}}</td>
-                        <td ng-hide="check == 'B'">{{x.centro_directivo}}</td>
-                        <td>{{x.centro_destino}}</td>
+                        <td ng-hide="hideMinisterio">{{x.ministerio}}</td>
+                        <td ng-hide="hideCentroDirectivo">{{x.centro_directivo}}</td>
+                        <td ng-hide="hideCentroDestino">{{x.centro_destino}}</td>
                         <td>{{x.provincia}}</td>
                         <td>{{x.localidad}}</td>
                         <td>{{x.puesto_trabajo}}</td>
