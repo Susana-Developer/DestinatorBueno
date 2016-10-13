@@ -8,7 +8,7 @@
                   <option value="30">Todos</option>
                 </select>
                 <br>
-                Columnas a mostrar: <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número; <input type="checkbox" ng-model="hideMinisterio"/> Ministerio; <input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.; <input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino; <input type="checkbox" ng-model="hideProvincia"/> Provincia; <input type="checkbox" ng-model="hideLocalidad"/> Localidad; <input type="checkbox" ng-model="hidePuestoTrabajo"/> Puesto de Trabajo;
+                Columnas a mostrar: <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número; <input type="checkbox" ng-model="hideMinisterio"/> Ministerio; <input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.; <input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino; <input type="checkbox" ng-model="hideProvincia"/> Provincia; <input type="checkbox" ng-model="hideLocalidad"/> Localidad; <input type="checkbox" ng-model="hidePuestoTrabajo"/> Puesto de Trabajo; <input type="checkbox" ng-model="hideNivel"/> Nivel C.D.; <input type="checkbox" ng-model="hideEspecifico"/> Comp. Específico.;
                
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
@@ -23,8 +23,8 @@
                         <th id="provincia" class="sortable" ng-click="singleSort('provincia')" ng-hide="hideProvincia">PROVINCIA<span class="caret-blank" ng-class="{'caret-down': sortDescend('provincia'), 'caret-up': sortAscend('provincia')}"></span><!--<a href="#provincia" ng-click="sortType = 'provincia'; sortReverse = !sortReverse">PROVINCIA<span ng-show="sortType == 'provincia' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'provincia' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th ng-hide="hideLocalidad">LOCALIDAD</th>
                         <th ng-hide="hidePuestoTrabajo">PUESTO DE TRABAJO</th>
-                        <th id="nivel" class="sortable" ng-click="singleSort('nivel')" ng-hide="myOption=='nivel'">NIVEL C.D<span class="caret-blank" ng-class="{'caret-down': sortDescend('nivel'), 'caret-up': sortAscend('nivel')}"></span><!--<a href="#nivel" ng-click="sortType = 'nivel'; sortReverse = !sortReverse">NIVEL C.D<span ng-show="sortType == 'nivel' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'nivel' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
-                        <th id="comp_especifico" class="sortable" ng-click="singleSort('comp_especifico')">COMP.ESPECÍFICO<span class="caret-blank" ng-class="{'caret-down': sortDescend('comp_especifico'), 'caret-up': sortAscend('comp_especifico')}"></span><!--<a href="#comp_especifico" ng-click="sortType = 'comp_especifico'; sortReverse = !sortReverse">COMP.ESPECÍFICO<span ng-show="sortType == 'comp_especifico' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'comp_especifico' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
+                        <th id="nivel" class="sortable" ng-click="singleSort('nivel')" ng-hide="hideNivel">NIVEL C.D<span class="caret-blank" ng-class="{'caret-down': sortDescend('nivel'), 'caret-up': sortAscend('nivel')}"></span><!--<a href="#nivel" ng-click="sortType = 'nivel'; sortReverse = !sortReverse">NIVEL C.D<span ng-show="sortType == 'nivel' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'nivel' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
+                        <th id="comp_especifico" class="sortable" ng-click="singleSort('comp_especifico')" ng-hide="hideEspecifico">COMP.ESPECÍFICO<span class="caret-blank" ng-class="{'caret-down': sortDescend('comp_especifico'), 'caret-up': sortAscend('comp_especifico')}"></span><!--<a href="#comp_especifico" ng-click="sortType = 'comp_especifico'; sortReverse = !sortReverse">COMP.ESPECÍFICO<span ng-show="sortType == 'comp_especifico' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'comp_especifico' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th>COMP. PRODUCTIVIDAD</th>
                         <th>DIRECCIÓN</th>
                         <th>TELÉFONO</th>
@@ -52,9 +52,9 @@
                         <td ng-hide="hideCentroDestino">{{x.centro_destino}}</td>
                         <td ng-hide="hideProvincia">{{x.provincia}}</td>
                         <td ng-hide="hideLocalidad">{{x.localidad}}</td>
-                        <td>{{x.puesto_trabajo}}</td>
-                        <td ng-hide="hidePuestoTrabajo">{{x.nivel}}</td>
-                        <td>{{x.comp_especifico}}</td>
+                        <td ng-hide="hidePuestoTrabajo">{{x.puesto_trabajo}}</td>
+                        <td ng-hide="hideNivel">{{x.nivel}}</td>
+                        <td ng-hide="hideEspecifico">{{x.comp_especifico}}</td>
                         <td>{{x.comp_productividad}}<br><button class="btn btn-xs btn-info" style="float: bottom;" type="button" cache-view="false" ng-model="productividad" ng-click="openDialog(x.comp_productividad, x._id, x.puesto_numero)">Editar</button></td>
                         <td>{{x.direccion}}<br><button class="btn btn-xs btn-info vertical-bottom" type="button" cache-view="false" ng-model="direccion" ng-click="openDialogDir(x.direccion, x._id, x.puesto_numero)">Editar</button></td>
                         <td>{{x.telefono}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="telefono" ng-click="openDialogTel(x.telefono, x._id, x.puesto_numero)">Editar</button></td>
