@@ -46,8 +46,8 @@
                     </thead>
                      <tbody>
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
-                      <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)">
-                        <td ng-hide="hidePuestoNumero">{{x.puesto_numero}}</td>
+                      <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)" ng-init="style={'background-color' : 'green'}">
+                        <td ng-hide="hidePuestoNumero" ng-style="style1" ng-click="style1=style;">{{x.puesto_numero}}</td>
                         <td ng-hide="hideMinisterio">{{x.ministerio}}</td>
                         <td ng-hide="hideCentroDirectivo">{{x.centro_directivo}}</td>
                         <td ng-hide="hideCentroDestino">{{x.centro_destino}}</td>
