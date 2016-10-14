@@ -123,3 +123,7 @@ th.sortable:hover {
 thead{
   height: 20px;
 }
+
+tbody{
+  overflow-y: scroll;
+}
