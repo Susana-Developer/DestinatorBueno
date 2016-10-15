@@ -121,4 +121,16 @@ th.sortable:hover {
   border-top: 8px solid #333;
 }
 
+.white{
+  color:white;
+}
+
+.blue{
+  color:blue;
+}
+
+.lightblue{
+  color: #CCC;
+}
+
 
