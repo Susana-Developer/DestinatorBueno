@@ -237,7 +237,16 @@ angular.module('Destinator')
               $scope.itemsPerPage = num;
               $scope.currentPage = 1; //reset to first paghe
             }*/
-
+        $scope.class = "white";
+        
+            
+        $scope.changeColor = function(){
+            if ($scope.class === "white")
+              $scope.class = "blue";
+            else
+              $scope.class = "white";
+          };
+        
 
         $scope.openDialog = function (productivity, id, puesto_num) {
             //var newScope = $scope.$new();
