@@ -134,7 +134,7 @@ th.sortable:hover {
 }
 
 .selected {
-  background: blue;
+  background-color: red;
 }
 
 
