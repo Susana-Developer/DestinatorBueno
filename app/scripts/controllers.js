@@ -237,16 +237,10 @@ angular.module('Destinator')
               $scope.itemsPerPage = num;
               $scope.currentPage = 1; //reset to first paghe
             }*/
-        $scope.class = "white";
-        
-            
-        $scope.changeColor = function(o){
-            o.style.backgroundColor=(o.style.backgroundColor=='white')?('blue'):('white');
-            /*if ($scope.class === "white")
-              $scope.class = "blue";
-            else
-              $scope.class = "white";*/
-          };
+        $scope.idSelectedRow = null;
+        $scope.setSelected = function (idSelectedRow) {
+           $scope.idSelectedRow = idSelectedRow;
+        };
         
 
         $scope.openDialog = function (productivity, id, puesto_num) {
