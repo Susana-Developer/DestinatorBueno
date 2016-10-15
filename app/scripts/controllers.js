@@ -240,11 +240,12 @@ angular.module('Destinator')
         $scope.class = "white";
         
             
-        $scope.changeColor = function(){
-            if ($scope.class === "white")
+        $scope.changeColor = function(o){
+            o.style.backgroundColor=(o.style.backgroundColor=='white')?('blue'):('white');
+            /*if ($scope.class === "white")
               $scope.class = "blue";
             else
-              $scope.class = "white";
+              $scope.class = "white";*/
           };
         
 
