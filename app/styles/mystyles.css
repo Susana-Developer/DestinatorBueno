@@ -133,8 +133,8 @@ th.sortable:hover {
   background: #CCC;
 }
 
-.selected tr {
-  background-color: blue;
+.selected {
+  background: blue;
 }
 
 
