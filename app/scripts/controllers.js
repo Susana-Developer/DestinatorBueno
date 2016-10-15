@@ -237,9 +237,9 @@ angular.module('Destinator')
               $scope.itemsPerPage = num;
               $scope.currentPage = 1; //reset to first paghe
             }*/
-        $scope.idSelectedRow = null;
-        $scope.setSelected = function (idSelectedRow) {
-           $scope.idSelectedRow = idSelectedRow;
+        $scope.selectedRow = null;
+        $scope.setClickedRow = function (index) {
+           $scope.selectedRow = index;
         };
         
 
