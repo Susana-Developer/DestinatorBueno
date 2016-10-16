@@ -85,7 +85,7 @@
             </div>
 
  <ul uib-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm" items-per-page="itemsPerPage" ng-change="updatePageIndexes()" max-size="maxSize" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
- <button type="button" ng-csv="destino" csv-header="" filename="destinosTAI2015.csv">Export</button>
+ <button type="button" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button>
 
         </div>
 
