@@ -242,6 +242,10 @@ angular.module('Destinator')
            $scope.selectedRow = index;
         };
         
+        $scope.getHeader = function () {return ["Puesto Nº", "Ministerio", "Centro Directivo/OOAA", "Centro Destino", "Provincia", "Localidad", "Puesto de Trabajo", "Nivel CD", "Comp. específico",
+         "Comp. productividad", "Dirección", "Teléfono", "Horario/Flexibilidad", "Descripción trabajo", "Transpote público", "Aparcamiento", "Ayudas estudios", "Ayudas preparación cuerpos superiores", 
+         "Conciliación", "Acción Social", "Comedor, precio", "Ducha", "Promoción, concursos", "Externos", "Comentarios"]};
+
 
         $scope.openDialog = function (productivity, id, puesto_num) {
             //var newScope = $scope.$new();
