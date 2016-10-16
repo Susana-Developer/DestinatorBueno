@@ -9,14 +9,14 @@
                 </select>
                 <br><br>
                 <b>No visualizar las columnas:</b><br> <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número; &nbsp;<input type="checkbox" ng-model="hideMinisterio"/> Ministerio; &nbsp;<input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.; &nbsp;<input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino; &nbsp;<input type="checkbox" ng-model="hideProvincia"/> Provincia; &nbsp;<input type="checkbox" ng-model="hideLocalidad"/> Localidad; &nbsp;<input type="checkbox" ng-model="hidePuestoTrabajo"/> Puesto de Trabajo; &nbsp;<input type="checkbox" ng-model="hideNivel"/> Nivel C.D.; &nbsp;<input type="checkbox" ng-model="hideEspecifico"/> Comp. Específico; &nbsp;<input type="checkbox" ng-model="hideProductividad"/> Comp. Productividad; &nbsp;<input type="checkbox" ng-model="hideDireccion"/> Direccion; &nbsp;<input type="checkbox" ng-model="hideTelefono"/> Teléfono; &nbsp;<input type="checkbox" ng-model="hideHorario"/> Horario/Flexibilidad; &nbsp;<input type="checkbox" ng-model="hideDescripcion"/> Descripción Trabajo; &nbsp;<input type="checkbox" ng-model="hideTranporte"/> Transporte Público; &nbsp;<input type="checkbox" ng-model="hideAparcamiento"/> Aparcamiento; &nbsp;<input type="checkbox" ng-model="hideAyudasEstudios"/> Ayudas Estudios; &nbsp;<input type="checkbox" ng-model="hideAyudasCuerposSup"/> Ayudas Preparación Cuerpos Superiores; &nbsp;<input type="checkbox" ng-model="hideConciliacion"/> Conciliación; &nbsp;<input type="checkbox" ng-model="hideAccionSocial"/> Acción Social; &nbsp;<input type="checkbox" ng-model="hideComedor"/> Comedor; &nbsp;<input type="checkbox" ng-model="hideDucha"/> Ducha; &nbsp;<input type="checkbox" ng-model="hidePromocion"/> Perspectivas de Promoción; &nbsp;<input type="checkbox" ng-model="hideExternos"/> Presencia Externos; &nbsp;<input type="checkbox" ng-model="hideComentarios"/> Comentarios; <br>
-                <button type="button" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button>
+                <button type="button" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button><br>
 
                 
                
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
                  data-ng-model="filterTable">-->
-                  <table class="table table-condensed"><!--table-striped table-hover-->
+                  <table class="table table-condensed" fixed-header><!--table-striped table-hover-->
                     <thead>
                       <tr class="info">
                         <th id="puesto_numero" class="sortable" ng-click="singleSort('puesto_numero')" ng-hide="hidePuestoNumero">PUESTO NÚMERO<span class="caret-blank" ng-class="{'caret-down': sortDescend('puesto_numero'), 'caret-up': sortAscend('puesto_numero')}"></span><!--<a href="#puesto_numero" ng-click="sortType = 'puesto_numero'; sortReverse = !sortReverse">PUESTO NÚMERO<span ng-show="sortType == 'puesto_numero' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'puesto_numero' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
