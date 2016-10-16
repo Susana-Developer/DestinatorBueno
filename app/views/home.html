@@ -73,7 +73,8 @@
                         <td ng-hide="hideDucha">{{x.ducha}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ducha" ng-click="openDialogDucha(x.ducha, x._id, x.puesto_numero)">Editar</button></td>
                         <td ng-hide="hidePromocion">{{x.promocion}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="promocion" ng-click="openDialogPromocion(x.promocion, x._id, x.puesto_numero)">Editar</button></td>
                         <td ng-hide="hideExternos">{{x.externos}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="externos" ng-click="openDialogExternos(x.externos, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideComentarios">{{x.comments}}</td>
+                        <td ng-hide="hideComentarios">{{x.observaciones}}</td>
+                        <!--<td ng-hide="hideComentarios">{{x.comments}}</td>-->
                       </tr>
                       </tbody>
                 </table>
