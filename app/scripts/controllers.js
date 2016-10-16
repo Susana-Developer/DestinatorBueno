@@ -242,9 +242,12 @@ angular.module('Destinator')
            $scope.selectedRow = index;
         };
         
-        $scope.getHeader = function () {return ["Puesto Nº", "Ministerio", "Centro Directivo/OOAA", "Centro Destino", "Provincia", "Localidad", "Puesto de Trabajo", "Nivel CD", "Comp. específico",
-         "Comp. productividad", "Dirección", "Teléfono", "Horario/Flexibilidad", "Descripción trabajo", "Transpote público", "Aparcamiento", "Ayudas estudios", "Ayudas preparación cuerpos superiores", 
-         "Conciliación", "Acción Social", "Comedor, precio", "Ducha", "Promoción, concursos", "Externos", "Comentarios"]};
+        $scope.getHeader = function () {return ["Puesto Nº", "Ministerio"]};//, "Centro Directivo/OOAA", "Centro Destino", "Provincia", "Localidad", "Puesto de Trabajo", "Nivel CD", "Comp. específico",
+        // "Comp. productividad", "Dirección", "Teléfono", "Horario/Flexibilidad", "Descripción trabajo", "Transpote público", "Aparcamiento", "Ayudas estudios", "Ayudas preparación cuerpos superiores", 
+         //"Conciliación", "Acción Social", "Comedor, precio", "Ducha", "Promoción, concursos", "Externos", "Comentarios"
+
+         $scope.getArray = [{a:'puesto_numero', b:'ministerio'}];//, c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'},
+      //{a:'No', b:'_id', c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'}];
 
 
         $scope.openDialog = function (productivity, id, puesto_num) {
