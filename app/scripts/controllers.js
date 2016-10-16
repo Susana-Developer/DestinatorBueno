@@ -246,6 +246,12 @@ angular.module('Destinator')
          "Comp. productividad", "Dirección", "Teléfono", "Horario/Flexibilidad", "Descripción trabajo", "Transpote público", "Aparcamiento", "Ayudas estudios", "Ayudas preparación cuerpos superiores", 
          "Conciliación", "Acción Social", "Comedor, precio", "Ducha", "Promoción, concursos", "Externos", "Comentarios"]};
 
+         columns = function () {
+            return ["puesto_numero", "ministerio", "centro_directivo", "centro_destino", "provincia", "localidad", "puesto_trabajo", "nivel", "comp_especifico",
+         "comp_productividad", "direccion", "telefono", "horario_flexibilidad", "descripcion", "transporte_publico", "aparcamiento", "ayudas_estudios", "ayudas_cuerpos_superiores", 
+         "conciliacion", "accion_social", "comedor", "ducha", "promocion", "externos", "observaciones"];
+        };
+
          //$scope.getArray = [{a:'puesto_numero', b:'ministerio'}];//, c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'},
       //{a:'No', b:'_id', c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'}];
 
