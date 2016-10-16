@@ -98,6 +98,9 @@ var destSchema = new Schema({
     externos: {
         type: String,
     },
+    observaciones: {
+        type: String,
+    },
     comments:[commentSchema]
 }, {
     timestamps: true
