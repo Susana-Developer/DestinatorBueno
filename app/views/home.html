@@ -9,7 +9,7 @@
                 </select>
                 <br><br>
                 <b>No visualizar las columnas:</b><br> <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número; &nbsp;<input type="checkbox" ng-model="hideMinisterio"/> Ministerio; &nbsp;<input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.; &nbsp;<input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino; &nbsp;<input type="checkbox" ng-model="hideProvincia"/> Provincia; &nbsp;<input type="checkbox" ng-model="hideLocalidad"/> Localidad; &nbsp;<input type="checkbox" ng-model="hidePuestoTrabajo"/> Puesto de Trabajo; &nbsp;<input type="checkbox" ng-model="hideNivel"/> Nivel C.D.; &nbsp;<input type="checkbox" ng-model="hideEspecifico"/> Comp. Específico; &nbsp;<input type="checkbox" ng-model="hideProductividad"/> Comp. Productividad; &nbsp;<input type="checkbox" ng-model="hideDireccion"/> Direccion; &nbsp;<input type="checkbox" ng-model="hideTelefono"/> Teléfono; &nbsp;<input type="checkbox" ng-model="hideHorario"/> Horario/Flexibilidad; &nbsp;<input type="checkbox" ng-model="hideDescripcion"/> Descripción Trabajo; &nbsp;<input type="checkbox" ng-model="hideTranporte"/> Transporte Público; &nbsp;<input type="checkbox" ng-model="hideAparcamiento"/> Aparcamiento; &nbsp;<input type="checkbox" ng-model="hideAyudasEstudios"/> Ayudas Estudios; &nbsp;<input type="checkbox" ng-model="hideAyudasCuerposSup"/> Ayudas Preparación Cuerpos Superiores; &nbsp;<input type="checkbox" ng-model="hideConciliacion"/> Conciliación; &nbsp;<input type="checkbox" ng-model="hideAccionSocial"/> Acción Social; &nbsp;<input type="checkbox" ng-model="hideComedor"/> Comedor; &nbsp;<input type="checkbox" ng-model="hideDucha"/> Ducha; &nbsp;<input type="checkbox" ng-model="hidePromocion"/> Perspectivas de Promoción; &nbsp;<input type="checkbox" ng-model="hideExternos"/> Presencia Externos; &nbsp;<input type="checkbox" ng-model="hideComentarios"/> Comentarios; <br>
-                <button type="button" ng-csv="tableData" csv-header="getHeader()" filename="test.csv">Export</button>
+                <button type="button" csv-column-order="columns" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button>
 
                 
                
@@ -86,7 +86,7 @@
             </div>
 
  <ul uib-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm" items-per-page="itemsPerPage" ng-change="updatePageIndexes()" max-size="maxSize" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
- <button type="button" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button>
+ 
 
         </div>
 
