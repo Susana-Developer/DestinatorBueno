@@ -19,7 +19,7 @@
                   <table class="table table-condensed"><!-- fixed-header>--><!--table-striped table-hover-->
                     <thead>
                       <tr class="info">
-                        <th ng-hide="hideFavorites">FAVORITO</th>
+                        <!--<th ng-hide="hideFavorites">FAVORITO</th>-->
                         <th id="puesto_numero" class="sortable" ng-click="singleSort('puesto_numero')" ng-hide="hidePuestoNumero">PUESTO NÚMERO<span class="caret-blank" ng-class="{'caret-down': sortDescend('puesto_numero'), 'caret-up': sortAscend('puesto_numero')}"></span><!--<a href="#puesto_numero" ng-click="sortType = 'puesto_numero'; sortReverse = !sortReverse">PUESTO NÚMERO<span ng-show="sortType == 'puesto_numero' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'puesto_numero' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th ng-hide="hideMinisterio">MINISTERIO</th>
                         <th ng-hide="hideCentroDirectivo">CENTRO DIRECTIVO / OO.AA.</th>
@@ -53,11 +53,11 @@
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
                       
                       <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)" ng-click="setClickedRow($index)" ng-class="{'selected': $index === selectedRow}"><!--ng-class="class"-->
-                        <td><!-- ng-hide="hideFavoritos">-->
-                            <button ng-click="addToFavorites(x._id, $index)" ng-hide="($index === selectedFavorite)" class="btn btn-xs btn-default" type="button">
+                        <!--<td>--><!-- ng-hide="hideFavoritos">-->
+                            <!--<button ng-click="addToFavorites(x._id, $index)" ng-hide="($index === selectedFavorite)" class="btn btn-xs btn-default" type="button">
                               <i class="fa fa-heart"></i>
                             </button>
-                        </td>
+                        </td>-->
                         <td ng-hide="hidePuestoNumero">{{x.puesto_numero}}</td>
                         <td ng-hide="hideMinisterio">{{x.ministerio}}</td>
                         <td ng-hide="hideCentroDirectivo">{{x.centro_directivo}}</td>
