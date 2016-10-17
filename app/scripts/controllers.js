@@ -254,7 +254,13 @@ angular.module('Destinator')
 
          //$scope.getArray = [{a:'puesto_numero', b:'ministerio'}];//, c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'},
       //{a:'No', b:'_id', c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'}];
-
+        $scope.showFavorites = true;
+        $scope.addToFavorites = function(destinoid) {
+            
+            $scope.showFavorites = !$scope.showFavorites;
+            //favoriteFactory.save({_id: destinoid});
+           
+        };
 
         $scope.openDialog = function (productivity, id, puesto_num) {
             //var newScope = $scope.$new();
@@ -726,23 +732,23 @@ angular.module('Destinator')
 
 .controller('FavoriteController', ['$scope', '$state', 'favoriteFactory', function ($scope, $state, favoriteFactory) {
 
-    $scope.tab = 1;
+    //$scope.tab = 1;
     $scope.filtText = '';
-    $scope.showDetails = false;
+    //$scope.showDetails = false;
     $scope.showDelete = false;
-    $scope.showMenu = false;
+    //$scope.showMenu = false;
     $scope.message = "Loading ...";
 
     favoriteFactory.query(
         function (response) {
-            $scope.dishes = response.dishes;
+            $scope.destinos = response.destinos;
             $scope.showMenu = true;
         },
         function (response) {
             $scope.message = "Error: " + response.status + " " + response.statusText;
         });
 
-    $scope.select = function (setTab) {
+    /*$scope.select = function (setTab) {
         $scope.tab = setTab;
 
         if (setTab === 2) {
@@ -762,18 +768,18 @@ angular.module('Destinator')
 
     $scope.toggleDetails = function () {
         $scope.showDetails = !$scope.showDetails;
-    };
+    };*/
 
     $scope.toggleDelete = function () {
         $scope.showDelete = !$scope.showDelete;
     };
     
-    $scope.deleteFavorite = function(dishid) {
+    /*$scope.deleteFavorite = function(dishid) {
         console.log('Delete favorites', dishid);
         favoriteFactory.delete({id: dishid});
         $scope.showDelete = !$scope.showDelete;
         $state.go($state.current, {}, {reload: true});
-    };
+    };*/
 }])
 
 .controller('HeaderController', ['$scope', '$state', '$rootScope', 'ngDialog', 'AuthFactory', function ($scope, $state, $rootScope, ngDialog, AuthFactory) {
