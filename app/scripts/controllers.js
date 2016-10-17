@@ -255,11 +255,11 @@ angular.module('Destinator')
          //$scope.getArray = [{a:'puesto_numero', b:'ministerio'}];//, c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'},
       //{a:'No', b:'_id', c:'siteID', d:'uSN', e:'idPel', f:'custID', g:'metername'}];
         $scope.showFavorites = true;
+        $scope.selectedFavorite = null;
         $scope.addToFavorites = function(destinoid, index) {
-            if($index === index){
-              $scope.showFavorites = !$scope.showFavorites;  
-            }
             
+              //$scope.showFavorites = !$scope.showFavorites;  
+              $scope.selectedFavorite = index;
             //favoriteFactory.save({_id: destinoid});
            
         };
