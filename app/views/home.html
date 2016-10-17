@@ -54,7 +54,7 @@
                       
                       <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)" ng-click="setClickedRow($index)" ng-class="{'selected': $index === selectedRow}"><!--ng-class="class"-->
                         <td><!-- ng-hide="hideFavoritos">-->
-                            <button ng-click="addToFavorites(x._id)" ng-show="showFavorites" class="btn btn-xs btn-default" type="button">
+                            <button ng-click="addToFavorites(x._id, $index)" ng-show="($index === selectedFavorite)" class="btn btn-xs btn-default" type="button">
                               <i class="fa fa-heart"></i>
                             </button>
                         </td>
