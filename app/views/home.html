@@ -16,7 +16,7 @@
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
                  data-ng-model="filterTable">-->
-                  <table class="table table-condensed"><!-- fixed-header>--><!--table-striped table-hover-->
+                  <table class="table table-condensed" id="testtable"><!-- fixed-header>--><!--table-striped table-hover-->
                     <thead>
                       <tr class="info">
                         <!--<th ng-hide="hideFavorites">FAVORITO</th>-->
@@ -52,7 +52,7 @@
                         
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
                       
-                      <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)" ng-click="setClickedRow($index)" ng-class="{'selected': $index === selectedRow}"><!--ng-class="class"-->
+                      <tr ng-repeat="x in destino|orderBy:[sortType]" ng-show="($index >= firstIndex) && ($index < lastIndex)" ng-click="setClickedRow($index)" ng-class="{'selected': $index === selectedRow}" fsm-sticky-header scroll-body="#testtable" scroll-stop='851'><!--ng-class="class"-->
                         <!--<td>--><!-- ng-hide="hideFavoritos">-->
                             <!--<button ng-click="addToFavorites(x._id, $index)" ng-hide="($index === selectedFavorite)" class="btn btn-xs btn-default" type="button">
                               <i class="fa fa-heart"></i>
