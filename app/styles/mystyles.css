@@ -141,5 +141,8 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-
+.table-fix{
+      margin: 0 auto !important;
+      width: 100% !important;
+}
 
