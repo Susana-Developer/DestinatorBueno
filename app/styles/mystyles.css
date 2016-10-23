@@ -142,6 +142,11 @@ th.sortable:hover {
             height: 400px;
         }*/
 .affix {
-      top: 20px;
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container {
+      padding-top: 70px;
   }
 
