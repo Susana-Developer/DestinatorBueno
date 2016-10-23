@@ -143,6 +143,7 @@ th.sortable:hover {
         }*/
 .affix {
       top: 20px;
+      z-index:1;
   }
 
 
