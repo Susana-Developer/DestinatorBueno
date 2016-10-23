@@ -1,5 +1,5 @@
 
-    <div class="container"  id="testtable">
+    <div class="container">
         <div class="row row-content">
             <h2>Destinos ofertados TAI Convocatoria 2015</h2>
             <b>Número de destinos por página:</b> <select ng-model="itemsPerPage" ng-change="updatePageIndexes()">
@@ -17,9 +17,9 @@
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
                  data-ng-model="filterTable">-->
-                  <table class="table table-condensed table-fix"><!-- fixed-header>--><!--table-striped table-hover-->
-                    <thead fsm-sticky-header scroll-body="#testtable" scroll-stop='100' >
-                      <tr class="info">
+                  <table class="table table-condensed"><!-- fixed-header>--><!--table-striped table-hover-->
+                    <thead data-spy="affix" data-offset-top="50">
+                      <tr class="info" >
                         <!--<th ng-hide="hideFavorites">FAVORITO</th>-->
                         <th id="puesto_numero" class="sortable" ng-click="singleSort('puesto_numero')" ng-hide="hidePuestoNumero">PUESTO NÚMERO<span class="caret-blank" ng-class="{'caret-down': sortDescend('puesto_numero'), 'caret-up': sortAscend('puesto_numero')}"></span><!--<a href="#puesto_numero" ng-click="sortType = 'puesto_numero'; sortReverse = !sortReverse">PUESTO NÚMERO<span ng-show="sortType == 'puesto_numero' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'puesto_numero' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th ng-hide="hideMinisterio">MINISTERIO</th>
