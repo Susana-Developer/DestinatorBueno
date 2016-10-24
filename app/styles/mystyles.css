@@ -141,9 +141,10 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-.affix {
-      top: 20px;
-      z-index:1;
-  }
+.yourclass.ui-scrollfix {
+    position:fixed;
+    top:50;
+}
+
 
 
