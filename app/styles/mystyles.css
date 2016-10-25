@@ -141,15 +141,33 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-.begin {
-    color: red;
-
-  }
-
-.begin.ui-scrollpoint {
-    
-    color:yellow;
-}
+.demo {
+                background-color: #EEF;
+            }
+            .demo.ui-scrollpoint {
+                background-color: #EFE;
+            }
+            .demo.my-scrollpoint {
+                background-color: #DFE;
+            }
+            .demo.another-scrollpoint {
+                border: 2px solid #3D3;
+            }  
+            .demo.in-view .id {
+                font-weight: bold;
+            }
+            .parent {
+                padding: 10px;
+                border: 1px solid #BBB;
+            }
+            .parent.relative {
+                position: relative;
+                background-color: #FEA;
+            }
+            .parent.absolute {
+                position: absolute;
+                background-color: #FE7;
+            }
 
 
 
