@@ -1,7 +1,7 @@
 'use strict';
 
 //angular.module('confusionApp', ['ui.router','ngResource','ngDialog'])
-angular.module('Destinator', ['ui.router','ngResource','ngDialog', 'ui.bootstrap', 'ngSanitize', 'ngCsv', 'anguFixedHeaderTable'])
+angular.module('Destinator', ['ui.router','ngResource','ngDialog', 'ui.bootstrap', 'ngSanitize', 'ngCsv', 'fsm', 'ui.scrollpoint'])
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 
@@ -75,10 +75,10 @@ angular.module('Destinator', ['ui.router','ngResource','ngDialog', 'ui.bootstrap
                         controller  : 'DishDetailController'
                    }
                 }
-            })
+            })*/
         
-            // route for the dishdetail page
-            .state('app.favorites', {
+            // route for the dishdetail page////////////////////////////
+            /*.state('app.favorites', {
                 url: 'favorites',
                 views: {
                     'content@': {
@@ -86,7 +86,7 @@ angular.module('Destinator', ['ui.router','ngResource','ngDialog', 'ui.bootstrap
                         controller  : 'FavoriteController'
                    }
                 }
-            });*/
+            })*/;
 
        
 
@@ -100,7 +100,7 @@ angular.module('Destinator', ['ui.router','ngResource','ngDialog', 'ui.bootstrap
                 }
             }
         })*/
-            ;
+            
 
         $urlRouterProvider.otherwise('/');
 
