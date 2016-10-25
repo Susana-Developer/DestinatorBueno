@@ -141,6 +141,3 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-.imSoSticky, .heightAuto{
-  width: auto !important;
-}
