@@ -141,7 +141,11 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-.fix {
+.begin {
+    position:absolute;
+    top:100px;
+}
+.begin..ui-scrollpoint {
     position:fixed;
     top:150px;
 }
