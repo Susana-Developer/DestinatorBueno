@@ -20,8 +20,8 @@
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
                  data-ng-model="filterTable">-->
                   <table class="table table-condensed"><!-- fixed-header>--><!--table-striped table-hover-->
-                    <thead class="demo" ui-scrollpoint="+100">
-                      <tr class="info">
+                    <thead>
+                      <tr class="info" ui-scrollpoint="+200" class="fix">
                         <!--<th ng-hide="hideFavorites">FAVORITO</th>-->
                         <th id="puesto_numero" class="sortable" ng-click="singleSort('puesto_numero')" ng-hide="hidePuestoNumero">PUESTO NÚMERO<span class="caret-blank" ng-class="{'caret-down': sortDescend('puesto_numero'), 'caret-up': sortAscend('puesto_numero')}"></span><!--<a href="#puesto_numero" ng-click="sortType = 'puesto_numero'; sortReverse = !sortReverse">PUESTO NÚMERO<span ng-show="sortType == 'puesto_numero' && !sortReverse" class="fa fa-caret-down"></span><span ng-show="sortType == 'puesto_numero' && sortReverse" class="fa fa-caret-up"></span></a>--></th>
                         <th ng-hide="hideMinisterio">MINISTERIO</th>
