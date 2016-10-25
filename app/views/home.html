@@ -7,12 +7,14 @@
                   <option value="20">20</option>
                   <option value="30">Todos</option>
                 </select>
-                <br><br>
-                <b>No visualizar las columnas:</b><br> <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número; &nbsp;<input type="checkbox" ng-model="hideMinisterio"/> Ministerio; &nbsp;<input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.; &nbsp;<input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino; &nbsp;<input type="checkbox" ng-model="hideProvincia"/> Provincia; &nbsp;<input type="checkbox" ng-model="hideLocalidad"/> Localidad; &nbsp;<input type="checkbox" ng-model="hidePuestoTrabajo"/> Puesto de Trabajo; &nbsp;<input type="checkbox" ng-model="hideNivel"/> Nivel C.D.; &nbsp;<input type="checkbox" ng-model="hideEspecifico"/> Comp. Específico; &nbsp;<input type="checkbox" ng-model="hideProductividad"/> Comp. Productividad; &nbsp;<input type="checkbox" ng-model="hideDireccion"/> Direccion; &nbsp;<input type="checkbox" ng-model="hideTelefono"/> Teléfono; &nbsp;<input type="checkbox" ng-model="hideHorario"/> Horario/Flexibilidad; &nbsp;<input type="checkbox" ng-model="hideDescripcion"/> Descripción Trabajo; &nbsp;<input type="checkbox" ng-model="hideTranporte"/> Transporte Público; &nbsp;<input type="checkbox" ng-model="hideAparcamiento"/> Aparcamiento; &nbsp;<input type="checkbox" ng-model="hideAyudasEstudios"/> Ayudas Estudios; &nbsp;<input type="checkbox" ng-model="hideAyudasCuerposSup"/> Ayudas Preparación Cuerpos Superiores; &nbsp;<input type="checkbox" ng-model="hideConciliacion"/> Conciliación; &nbsp;<input type="checkbox" ng-model="hideAccionSocial"/> Acción Social; &nbsp;<input type="checkbox" ng-model="hideComedor"/> Comedor; &nbsp;<input type="checkbox" ng-model="hideDucha"/> Ducha; &nbsp;<input type="checkbox" ng-model="hidePromocion"/> Perspectivas de Promoción; &nbsp;<input type="checkbox" ng-model="hideExternos"/> Presencia Externos; &nbsp;<input type="checkbox" ng-model="hideComentarios"/> Comentarios; <br><br>
-                <button type="button" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button><br><br>
+                <br/><br/>
+                   <b>No visualizar las columnas:</b><br> <input type="checkbox" ng-model="hidePuestoNumero"/> Puesto Número; &nbsp;<input type="checkbox" ng-model="hideMinisterio"/> Ministerio; &nbsp;<input type="checkbox" ng-model="hideCentroDirectivo"/> Centro Directivo / OO.AA.; &nbsp;<input type="checkbox" ng-model="hideCentroDestino"/> Centro de Destino; &nbsp;<input type="checkbox" ng-model="hideProvincia"/> Provincia; &nbsp;<input type="checkbox" ng-model="hideLocalidad"/> Localidad; &nbsp;<input type="checkbox" ng-model="hidePuestoTrabajo"/> Puesto de Trabajo; &nbsp;<input type="checkbox" ng-model="hideNivel"/> Nivel C.D.; &nbsp;<input type="checkbox" ng-model="hideEspecifico"/> Comp. Específico; &nbsp;<input type="checkbox" ng-model="hideProductividad"/> Comp. Productividad; &nbsp;<input type="checkbox" ng-model="hideDireccion"/> Direccion; &nbsp;<input type="checkbox" ng-model="hideTelefono"/> Teléfono; &nbsp;<input type="checkbox" ng-model="hideHorario"/> Horario/Flexibilidad; &nbsp;<input type="checkbox" ng-model="hideDescripcion"/> Descripción Trabajo; &nbsp;<input type="checkbox" ng-model="hideTranporte"/> Transporte Público; &nbsp;<input type="checkbox" ng-model="hideAparcamiento"/> Aparcamiento; &nbsp;<input type="checkbox" ng-model="hideAyudasEstudios"/> Ayudas Estudios; &nbsp;<input type="checkbox" ng-model="hideAyudasCuerposSup"/> Ayudas Preparación Cuerpos Superiores; &nbsp;<input type="checkbox" ng-model="hideConciliacion"/> Conciliación; &nbsp;<input type="checkbox" ng-model="hideAccionSocial"/> Acción Social; &nbsp;<input type="checkbox" ng-model="hideComedor"/> Comedor; &nbsp;<input type="checkbox" ng-model="hideDucha"/> Ducha; &nbsp;<input type="checkbox" ng-model="hidePromocion"/> Perspectivas de Promoción; &nbsp;<input type="checkbox" ng-model="hideExternos"/> Presencia Externos; &nbsp;<input type="checkbox" ng-model="hideComentarios"/> Comentarios; <br><br>
+
+         
+                <button type="button" ng-csv="destino" csv-header="getHeader()" filename="destinosTAI2015.csv">Export</button><br/><br/>
 
 
-                
+            <section class="">
                
             <div class="table-responsive">
             <!--<input id="filter" type="text" placeholder="Filter" class="form-control"
@@ -49,7 +51,7 @@
 
                       </tr>
                     </thead>
-                     <tbody">
+                     <tbody>
                         
                       <!--<tr ng-repeat="x in destino.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">-->
                       
@@ -68,21 +70,21 @@
                         <td ng-hide="hidePuestoTrabajo">{{x.puesto_trabajo}}</td>
                         <td ng-hide="hideNivel">{{x.nivel}}</td>
                         <td ng-hide="hideEspecifico">{{x.comp_especifico}}</td>
-                        <td ng-hide="hideProductividad">{{x.comp_productividad}}<br><button class="btn btn-xs btn-info" style="float: bottom;" type="button" cache-view="false" ng-model="productividad" ng-click="openDialog(x.comp_productividad, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideDireccion">{{x.direccion}}<br><button class="btn btn-xs btn-info vertical-bottom" type="button" cache-view="false" ng-model="direccion" ng-click="openDialogDir(x.direccion, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideTelefono">{{x.telefono}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="telefono" ng-click="openDialogTel(x.telefono, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideHorario">{{x.horario_flexibilidad}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="horario_flexibilidad" ng-click="openDialogHorario(x.horario_flexibilidad, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideDescripcion">{{x.descripcion}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="descripcion" ng-click="openDialogDescripcion(x.descripcion, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideTranporte">{{x.transporte_publico}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="transporte_publico" ng-click="openDialogTransporte(x.transporte_publico, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideAparcamiento">{{x.aparcamiento}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="aparcamiento" ng-click="openDialogAparcamiento(x.aparcamiento, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideAyudasEstudios">{{x.ayudas_estudios}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ayudas_estudios" ng-click="openDialogAyudas(x.ayudas_estudios, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideAyudasCuerposSup">{{x.ayudas_cuerpos_superiores}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ayudas_cuerpos_superiores" ng-click="openDialogAyudasCuerposSuperiores(x.ayudas_cuerpos_superiores, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideConciliacion">{{x.concilacion}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="conciliacion" ng-click="openDialogConciliacion(x.concilacion, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideAccionSocial">{{x.accion_social}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="accion_social" ng-click="openDialogAccion(x.accion_social, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideComedor">{{x.comedor}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="comedor" ng-click="openDialogComedor(x.comedor, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideDucha">{{x.ducha}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ducha" ng-click="openDialogDucha(x.ducha, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hidePromocion">{{x.promocion}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="promocion" ng-click="openDialogPromocion(x.promocion, x._id, x.puesto_numero)">Editar</button></td>
-                        <td ng-hide="hideExternos">{{x.externos}}<br><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="externos" ng-click="openDialogExternos(x.externos, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideProductividad">{{x.comp_productividad}}<br/><button class="btn btn-xs btn-info" style="float: bottom;" type="button" cache-view="false" ng-model="productividad" ng-click="openDialog(x.comp_productividad, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideDireccion">{{x.direccion}}<br/><button class="btn btn-xs btn-info vertical-bottom" type="button" cache-view="false" ng-model="direccion" ng-click="openDialogDir(x.direccion, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideTelefono">{{x.telefono}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="telefono" ng-click="openDialogTel(x.telefono, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideHorario">{{x.horario_flexibilidad}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="horario_flexibilidad" ng-click="openDialogHorario(x.horario_flexibilidad, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideDescripcion">{{x.descripcion}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="descripcion" ng-click="openDialogDescripcion(x.descripcion, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideTranporte">{{x.transporte_publico}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="transporte_publico" ng-click="openDialogTransporte(x.transporte_publico, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideAparcamiento">{{x.aparcamiento}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="aparcamiento" ng-click="openDialogAparcamiento(x.aparcamiento, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideAyudasEstudios">{{x.ayudas_estudios}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ayudas_estudios" ng-click="openDialogAyudas(x.ayudas_estudios, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideAyudasCuerposSup">{{x.ayudas_cuerpos_superiores}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ayudas_cuerpos_superiores" ng-click="openDialogAyudasCuerposSuperiores(x.ayudas_cuerpos_superiores, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideConciliacion">{{x.concilacion}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="conciliacion" ng-click="openDialogConciliacion(x.concilacion, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideAccionSocial">{{x.accion_social}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="accion_social" ng-click="openDialogAccion(x.accion_social, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideComedor">{{x.comedor}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="comedor" ng-click="openDialogComedor(x.comedor, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideDucha">{{x.ducha}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="ducha" ng-click="openDialogDucha(x.ducha, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hidePromocion">{{x.promocion}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="promocion" ng-click="openDialogPromocion(x.promocion, x._id, x.puesto_numero)">Editar</button></td>
+                        <td ng-hide="hideExternos">{{x.externos}}<br/><button class="btn btn-xs btn-info" type="button" cache-view="false" ng-model="externos" ng-click="openDialogExternos(x.externos, x._id, x.puesto_numero)">Editar</button></td>
                         <td ng-hide="hideComentarios">{{x.observaciones}}</td>
                         <!--<td ng-hide="hideComentarios">{{x.comments}}</td>-->
                       </tr>
@@ -94,6 +96,7 @@
                 
                 
             </div>
+            </section>
 
  <ul uib-pagination total-items="totalItems" ng-model="currentPage" class="pagination-sm" items-per-page="itemsPerPage" ng-change="updatePageIndexes()" max-size="maxSize" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
  
