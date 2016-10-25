@@ -141,16 +141,9 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-.well {
-  background : #eee;
-}
-
-.well.ui-scrollfix {
-  position : fixed;
-  background : #f00;
-  top : 50;
-
-}
+.demo.ui-scrollpoint {
+                background-color: #EFE;
+            }
 
 
 
