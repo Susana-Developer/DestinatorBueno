@@ -142,11 +142,14 @@ th.sortable:hover {
             height: 400px;
         }*/
 .begin {
-    position:absolute;
+    color: red;
 
-.begin..ui-scrollpoint {
+  }
+
+.begin.ui-scrollpoint {
     position:fixed;
     top:150px;
+    color:yellow;
 }
 
 
