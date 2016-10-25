@@ -141,9 +141,10 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
-.demo.ui-scrollpoint {
-                background-color: #EFE;
-            }
+.fix {
+    position:fixed;
+    top:150px;
+}
 
 
 
