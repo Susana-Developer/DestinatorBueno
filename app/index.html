@@ -58,46 +58,46 @@
         <script src="../bower_components/ngSticky/dist/sticky.min.js"></script>
         <link href="../bower_components/stickyRows-master/stickyRows.js">
         <script >
-            (function($) {
-   $.fn.fixMe = function() {
-      return this.each(function() {
-         var $this = $(this),
-            $t_fixed;
-         function init() {
-            $this.wrap('<div class="container" />');
-            $t_fixed = $this.clone();
-            $t_fixed.find("tbody").remove().end().addClass("fixed").insertBefore($this);
-            resizeFixed();
-         }
-         function resizeFixed() {
-            $t_fixed.find("th").each(function(index) {
-               $(this).css("width",$this.find("th").eq(index).outerWidth()+"px");
-            });
-         }
-         function scrollFixed() {
-            var offset = $(this).scrollTop(),
-            tableOffsetTop = $this.offset().top,
-            tableOffsetBottom = tableOffsetTop + $this.height() - $this.find("thead").height();
-            if(offset < tableOffsetTop || offset > tableOffsetBottom)
-               $t_fixed.hide();
-            else if(offset >= tableOffsetTop && offset <= tableOffsetBottom && $t_fixed.is(":hidden"))
-               $t_fixed.show();
-         }
-         $(window).resize(resizeFixed);
-         $(window).scroll(scrollFixed);
-         init();
-      });
-   };
-})(jQuery);
+            function UpdateTableHeaders() {
+       $(".persist-area").each(function() {
+       
+           var el             = $(this),
+               offset         = el.offset(),
+               scrollTop      = $(window).scrollTop(),
+               floatingHeader = $(".floatingHeader", this)
+           
+           if ((scrollTop > offset.top) && (scrollTop < offset.top + el.height())) {
+               floatingHeader.css({
+                "visibility": "visible"
+               });
+           } else {
+               floatingHeader.css({
+                "visibility": "hidden"
+               });      
+           };
+       });
+    }
+    
+    // DOM Ready      
+    $(function() {
+    
+       var clonedHeaderRow;
+    
+       $(".persist-area").each(function() {
+           clonedHeaderRow = $(".persist-header", this);
+           clonedHeaderRow
+             .before(clonedHeaderRow.clone())
+             .css("width", clonedHeaderRow.width())
+             .addClass("floatingHeader");
+             
+       });
+       
+       $(window)
+        .scroll(UpdateTableHeaders)
+        .trigger("scroll");
+       
+    });
 
-$(document).ready(function(){
-   $("table").fixMe();
-   $(".up").click(function() {
-      $('html, body').animate({
-      scrollTop: 0
-   }, 2000);
- });
-});
         </script>
         
 
