@@ -141,8 +141,4 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
- .floatingHeader {
-      position: fixed;
-      top: 0;
-      visibility: hidden;
-    }
+
