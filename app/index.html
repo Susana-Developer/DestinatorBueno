@@ -17,6 +17,7 @@
     <link href="../bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
     <link href="../bower_components/ng-dialog/css/ngDialog-theme-plain.min.css" rel="stylesheet">
     <link href="../bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
+    <link href="../bower_components/stickyRows-master/stickyRows.css" rel="stylesheet">
     <link href="styles/bootstrap-social.css" rel="stylesheet">
     <link href="styles/mystyles.css" rel="stylesheet">
 
@@ -55,7 +56,12 @@
        <script src="../bower_components/angu-fixed-header-table/angu-fixed-header-table.js"></script>
         <script src="../bower_components/fsm-sticky-header/src/fsm-sticky-header.js"></script>
         <script src="../bower_components/ngSticky/dist/sticky.min.js"></script>
-        
+        <link href="../bower_components/stickyRows-master/stickyRows.js">
+        <script >
+            $(function(){
+  $('.table-with-sticky-rows').stickyRows();
+});
+        </script>
         
 
     
