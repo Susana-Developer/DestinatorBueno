@@ -144,7 +144,7 @@ th.sortable:hover {
 .hide {
         display:none;
     }
-    table.stickyHeader {
+    div.stickyHeader {
         top:50;
         position:fixed;
         _position:absolute;
