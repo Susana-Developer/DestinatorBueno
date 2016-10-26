@@ -141,3 +141,10 @@ th.sortable:hover {
 /*.table {
             height: 400px;
         }*/
+.fixed{
+  top:50;
+  position:fixed;
+  width:auto;
+  display:none;
+  border:none;
+}
