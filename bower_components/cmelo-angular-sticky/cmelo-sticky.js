@@ -25,7 +25,7 @@ angular.module('cmelo.angularSticky', [])
 
 				function getOffset(el) {
 					if (!el) { return Infinity; }
-					return el.offsetTop + el.offsetParent.offsetTop;
+					return el.offsetTop + el.offsetParent.offsetTop+50;
 				}
 
 				function getClosest(el, attribute) {
