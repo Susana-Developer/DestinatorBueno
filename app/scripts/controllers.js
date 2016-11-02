@@ -159,7 +159,7 @@ angular.module('Destinator')
 
 
         $scope.viewby = 10;
-        $scope.totalItems = 28;
+        $scope.totalItems = 92;
         $scope.currentPage = 1;
         $scope.itemsPerPage = $scope.viewby;
         $scope.maxSize = 5; //Number of pager buttons to show
