@@ -454,10 +454,24 @@ angular.module('Destinator')
             $scope.identificador = id;
             $scope.externos = ext;
             $scope.puesto_num = puesto_num;
+            ngDialog.open({ template: 'views/observaciones.html', scope: $scope, className: 'ngdialog-theme-default', controller:"ObservacionesController" });
+            
+            
+        };
+
+        $scope.openDialogExternos = function (obs, id, puesto_num) {
+            //var newScope = $scope.$new();
+            //newScope.productividad = productivity;
+            //newScope.id = id;
+            //scope: newScope
+            $scope.identificador = id;
+            $scope.observaciones = obs;
+            $scope.puesto_num = puesto_num;
             ngDialog.open({ template: 'views/externos.html', scope: $scope, className: 'ngdialog-theme-default', controller:"ExternosController" });
             
             
         };
+        
 
         $scope.$on('login:Successful', function () {
             /*$scope.destino = */destinosFactory.query({})
@@ -577,6 +591,19 @@ angular.module('Destinator')
 
         $scope.destino[$scope.puesto_num-1].horario_flexibilidad = $scope.horario_flexibilidad;
         horarioFactory.updateHorario($scope.identificador, $scope.horario_flexibilidad);
+        ngDialog.close();
+        //$state.transitionTo($state);
+    };
+
+    
+}])
+
+.controller('ObservacionesController', ['$scope', '$state', '$stateParams', 'ngDialog', 'observacionesFactory', function ($scope, $state, $stateParams, ngDialog, observacionesFactory) {
+    
+    $scope.doUpdateObservaciones = function() {
+
+        $scope.destino[$scope.puesto_num-1].observaciones = $scope.observaciones;
+        observacionesFactory.updateObservaciones($scope.identificador, $scope.observaciones);
         ngDialog.close();
         //$state.transitionTo($state);
     };
