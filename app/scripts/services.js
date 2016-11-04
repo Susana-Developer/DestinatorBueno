@@ -2,6 +2,16 @@
 
 angular.module('Destinator')
 .constant("baseURL", "https://protected-retreat-21113.herokuapp.com/")
+/*.factory('favoriteFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
+
+
+    return $resource(baseURL + "favorites/:id", null, {
+            'update': {
+                method: 'PUT'
+            },
+            'query':  {method:'GET', isArray:false}
+        });
+*/
 .factory('destinosFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
 
         return $resource(baseURL + "destinos", null, {
@@ -360,6 +370,29 @@ angular.module('Destinator')
             myResource.update(
             {id: identificador},
             {externos: ext},
+            function (successResponse) {console.log("update correct");},
+            function (failResponse) {console.log("Fail update");}
+          );
+          }
+        }
+
+}])
+.factory('observacionesFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
+
+
+        var myResource = $resource(baseURL + "destinos/:id", null, {
+            'update': {
+                method: 'PUT'
+            }
+        });
+
+
+
+        return {
+          updatObservaciones: function (identificador, obs ){
+            myResource.update(
+            {id: identificador},
+            {observaciones: obs},
             function (successResponse) {console.log("update correct");},
             function (failResponse) {console.log("Fail update");}
           );
