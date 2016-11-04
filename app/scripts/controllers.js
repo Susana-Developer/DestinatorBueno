@@ -454,7 +454,7 @@ angular.module('Destinator')
             $scope.identificador = id;
             $scope.externos = ext;
             $scope.puesto_num = puesto_num;
-            ngDialog.open({ template: 'views/externos.html', scope: $scope, className: 'ngdialog-theme-default', controller:"ObservacionesController" });
+            ngDialog.open({ template: 'views/externos.html', scope: $scope, className: 'ngdialog-theme-default', controller:"ExternosController" });
             
             
         };
@@ -467,7 +467,7 @@ angular.module('Destinator')
             $scope.identificador = id;
             $scope.observaciones = obs;
             $scope.puesto_num = puesto_num;
-            ngDialog.open({ template: 'views/observaciones.html', scope: $scope, className: 'ngdialog-theme-default', controller:"ExternosController" });
+            ngDialog.open({ template: 'views/observaciones.html', scope: $scope, className: 'ngdialog-theme-default', controller:"ObservacionesController" });
             
             
         };
