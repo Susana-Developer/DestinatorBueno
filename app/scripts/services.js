@@ -389,7 +389,7 @@ angular.module('Destinator')
 
 
         return {
-          updatObservaciones: function (identificador, obs ){
+          updateObservaciones: function (identificador, obs ){
             myResource.update(
             {id: identificador},
             {observaciones: obs},
